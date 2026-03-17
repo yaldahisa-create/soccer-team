@@ -28,13 +28,32 @@
         </div>
       </a>
 
-      <nav class="nav-links">
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="mobileMenu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="players.html" class="active">Players</a>
         <a href="join.html">Join</a>
         <a href="fixtures.html">Fixtures</a>
-        <a href="https://www.instagram.com/union_vale_fc?igsh=MWFoOGcxbzI4MnBzMg%3D%3D" target="_blank" rel="noopener" class="btn btn-primary">Instagram</a>
+        <a
+          href="https://www.instagram.com/union_vale_fc?igsh=MWFoOGcxbzI4MnBzMg%3D%3D"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+        >
+          Instagram
+        </a>
       </nav>
     </div>
   </header>
@@ -51,22 +70,40 @@
         </div>
 
         <div class="quick-links-grid">
-          <article class="quick-card" style="padding:16px;">
-            <img src="assets/player-1.jpg" alt="Union Vale FC player" style="width:100%; height:420px; object-fit:cover; object-position:center top; border-radius:20px; margin-bottom:16px;">
+          <article class="quick-card" style="padding: 16px;">
+            <img
+              src="assets/player-1.jpg"
+              alt="Union Vale FC player"
+              style="width: 100%; height: 420px; object-fit: cover; object-position: center top; border-radius: 20px; margin-bottom: 16px;"
+            />
             <h3>Senior Squad Presence</h3>
-            <p>Strong presentation, calm confidence, and a polished visual identity for the club.</p>
+            <p>
+              Strong presentation, calm confidence, and a polished visual identity for the club.
+            </p>
           </article>
 
-          <article class="quick-card" style="padding:16px;">
-            <img src="assets/player-2.jpg" alt="Union Vale FC player" style="width:100%; height:420px; object-fit:cover; object-position:center top; border-radius:20px; margin-bottom:16px;">
+          <article class="quick-card" style="padding: 16px;">
+            <img
+              src="assets/player-2.jpg"
+              alt="Union Vale FC player"
+              style="width: 100%; height: 420px; object-fit: cover; object-position: center top; border-radius: 20px; margin-bottom: 16px;"
+            />
             <h3>Identity & Focus</h3>
-            <p>A disciplined and composed image that reflects structure, ambition, and team pride.</p>
+            <p>
+              A disciplined and composed image that reflects structure, ambition, and team pride.
+            </p>
           </article>
 
-          <article class="quick-card" style="padding:16px;">
-            <img src="assets/player-3.jpg" alt="Union Vale FC player" style="width:100%; height:420px; object-fit:cover; object-position:center top; border-radius:20px; margin-bottom:16px;">
+          <article class="quick-card" style="padding: 16px;">
+            <img
+              src="assets/player-3.jpg"
+              alt="Union Vale FC player"
+              style="width: 100%; height: 420px; object-fit: cover; object-position: center top; border-radius: 20px; margin-bottom: 16px;"
+            />
             <h3>Energy & Character</h3>
-            <p>Player imagery that adds personality, momentum, and a memorable presence to the club brand.</p>
+            <p>
+              Player imagery that adds personality, momentum, and a memorable presence to the club brand.
+            </p>
           </article>
         </div>
       </div>
@@ -85,7 +122,14 @@
 
           <div class="cta-actions">
             <a href="join.html" class="btn btn-primary">Join Union Vale FC</a>
-            <a href="https://www.instagram.com/union_vale_fc?igsh=MWFoOGcxbzI4MnBzMg%3D%3D" target="_blank" rel="noopener" class="btn btn-secondary">Follow on Instagram</a>
+            <a
+              href="https://www.instagram.com/union_vale_fc?igsh=MWFoOGcxbzI4MnBzMg%3D%3D"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-secondary"
+            >
+              Follow on Instagram
+            </a>
           </div>
         </div>
       </div>
@@ -95,8 +139,30 @@
   <footer class="site-footer">
     <div class="container footer-row">
       <p>© 2026 Union Vale FC. All rights reserved.</p>
-      <p>Designed by <a href="https://www.instagram.com/valenciadigitalstudio?igsh=MWRkOGlpdWNxNnF4ZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Valencia Digital Studio</a></p>
+      <p>
+        Designed by
+        <a
+          href="https://www.instagram.com/valenciadigitalstudio?igsh=MWRkOGlpdWNxNnF4ZQ%3D%3D&utm_source=qr"
+          target="_blank"
+          rel="noopener"
+        >
+          Valencia Digital Studio
+        </a>
+      </p>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("show");
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+      });
+    }
+  </script>
 </body>
 </html>
