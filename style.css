@@ -143,6 +143,7 @@ img {
   justify-content: center;
   flex-direction: column;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .menu-toggle span {
@@ -173,13 +174,13 @@ img {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #fff;
+  color: #fff !important;
   box-shadow: 0 12px 28px rgba(30, 58, 138, 0.40);
 }
 
 .btn-secondary {
   background: rgba(255, 255, 255, 0.04);
-  color: var(--text);
+  color: var(--text) !important;
   border-color: var(--line);
 }
 
@@ -463,7 +464,7 @@ img {
   color: #ffffff;
 }
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 980px) {
   .hero-grid,
   .quick-links-grid,
@@ -481,6 +482,7 @@ img {
   }
 }
 
+/* Mobile */
 @media (max-width: 760px) {
   .nav {
     flex-direction: row;
@@ -497,7 +499,7 @@ img {
     position: absolute;
     top: calc(100% + 12px);
     right: 0;
-    width: min(280px, 100%);
+    width: min(280px, calc(100vw - 32px));
     padding: 18px;
     border-radius: 22px;
     background: rgba(7, 16, 31, 0.98);
@@ -523,12 +525,20 @@ img {
     margin-top: 4px;
   }
 
+  .brand {
+    max-width: calc(100% - 70px);
+  }
+
   .brand-text span {
     font-size: 0.92rem;
   }
 
   .brand-text small {
     font-size: 0.7rem;
+  }
+
+  .hero {
+    padding: 48px 0 40px;
   }
 
   .hero-copy {
@@ -547,5 +557,22 @@ img {
   .hero-copy h1 {
     font-size: clamp(2.6rem, 9vw, 4rem);
   }
-}
+
+  .hero-actions,
+  .cta-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn,
+  .cta-actions .btn {
+    width: 100%;
+  }
+
+  .quick-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-card img {
+    min-height: 300px;
+  }
 }
