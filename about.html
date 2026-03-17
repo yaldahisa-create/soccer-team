@@ -28,13 +28,32 @@
         </div>
       </a>
 
-      <nav class="nav-links">
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="mobileMenu">
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About</a>
         <a href="players.html">Players</a>
         <a href="join.html">Join</a>
         <a href="fixtures.html">Fixtures</a>
-        <a href="https://www.instagram.com/union_vale_fc?igsh=MWFoOGcxbzI4MnBzMg%3D%3D" target="_blank" rel="noopener" class="btn btn-primary">Instagram</a>
+        <a
+          href="https://www.instagram.com/union_vale_fc?igsh=MWFoOGcxbzI4MnBzMg%3D%3D"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+        >
+          Instagram
+        </a>
       </nav>
     </div>
   </header>
@@ -57,9 +76,12 @@
         </div>
 
         <div class="hero-visual glass-card">
-          <div class="hero-image" style="background:
-            linear-gradient(rgba(7, 16, 31, 0.12), rgba(7, 16, 31, 0.54)),
-            url('assets/team-about.jpg') center/cover no-repeat;">
+          <div
+            class="hero-image"
+            style="background:
+              linear-gradient(rgba(7, 16, 31, 0.12), rgba(7, 16, 31, 0.54)),
+              url('assets/team-about.jpg') center/cover no-repeat;"
+          >
             <div class="hero-overlay">
               <p>Club Identity</p>
               <strong>Union Vale FC</strong>
@@ -130,8 +152,30 @@
   <footer class="site-footer">
     <div class="container footer-row">
       <p>© 2026 Union Vale FC. All rights reserved.</p>
-      <p>Designed by <a href="https://www.instagram.com/valenciadigitalstudio?igsh=MWRkOGlpdWNxNnF4ZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Valencia Digital Studio</a></p>
+      <p>
+        Designed by
+        <a
+          href="https://www.instagram.com/valenciadigitalstudio?igsh=MWRkOGlpdWNxNnF4ZQ%3D%3D&utm_source=qr"
+          target="_blank"
+          rel="noopener"
+        >
+          Valencia Digital Studio
+        </a>
+      </p>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("show");
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+      });
+    }
+  </script>
 </body>
 </html>
